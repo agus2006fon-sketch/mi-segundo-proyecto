@@ -1,4 +1,4 @@
-package Genericidad;
+package Genericidad.ejercicio1y3;
 
 abstract public class Elemento {
     

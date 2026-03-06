@@ -1,4 +1,4 @@
-package Genericidad;
+package Genericidad.ejercicio1y3;
 
 public class Alumno extends Elemento {
     //atributos de clase

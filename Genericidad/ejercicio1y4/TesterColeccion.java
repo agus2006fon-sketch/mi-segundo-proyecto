@@ -1,4 +1,4 @@
-package Genericidad;
+package Genericidad.ejercicio1y3;
 
 public class TesterColeccion {
     public static void main(String[]a){
@@ -24,9 +24,11 @@ public class TesterColeccion {
         //metodo recuperar
         System.out.println("rta esperada;null: "+c.recuperarElemento(6));
         System.out.println(c.recuperarElemento(4));
-        //
+        //estaElemento
         System.out.println("false:"+c.estaElemento(a1));
         System.out.println("true:"+c.estaElemento(a2));
+        //metodo cantElementos
+        System.out.println(c.cantElementos());
 
     }
 }
