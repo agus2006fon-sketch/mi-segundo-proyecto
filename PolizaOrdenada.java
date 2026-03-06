@@ -72,7 +72,41 @@ public class PolizaOrdenada {
         return o;
     }
     public PolizaOrdenada intercalada(PolizaOrdenada p){
-        
+        int i=0;
+        int j=0;
+        PolizaOrdenada nueva=new PolizaOrdenada(n+p.cantElementos());
+        while(i<n && j<p.cantElementos()){
+            if(polOrd[i].obtenerNroPoliza()>p.obtenerPoliza(j).obtenerNroPoliza()){
+                nueva.polOrd[nueva.cantElementos()]=p.obtenerPoliza(j);
+                nueva.n++;
+                j++;
+            }else{
+                nueva.polOrd[nueva.cantElementos()]=polOrd[i];
+                nueva.n++;
+                i++;
+            }
+        }
+        while(i<n){
+            nueva.polOrd[nueva.cantElementos()]=polOrd[i];
+            nueva.n++;
+            i++;
+        }
+        while(j<p.cantElementos()){
+            nueva.polOrd[nueva.cantElementos()]=p.obtenerPoliza(j);
+            nueva.n++;
+            j++;
+        }
+        return nueva;
+    }
+    public boolean equals(PolizaOrdenada p){
+        boolean eq=true;
+        if(cantElementos()==p.cantElementos()){
+            for(int i=0;i<cantElementos() && eq;i++){
+                eq=polOrd[i]==p.obtenerPoliza(i);
+            }
+        }else
+            eq=false;
+        return eq;
     }
 
 }
