@@ -1,4 +1,4 @@
-package Genericidad.ejercicio1y3;
+package Genericidad.ejercicio1y4;
 
 public class Tecnico extends Empleado {
     public Tecnico(int leg,String nombre,int canth,float valorh){

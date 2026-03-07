@@ -41,7 +41,53 @@ public class Conjunto {
         return es;
     }
     public boolean incluido(Conjunto c){
-        boolean esta=false;
-        
+        boolean esta=true;
+        for(int i=0;i<cantElementos && esta;i++){
+            if(!c.pertenece(ce[i])){
+                esta=false;
+            }
+        }        
+        return esta;
+    }
+    public boolean esEquivalente(Conjunto c){
+        return (this.cantElementos==c.cantElementos) && this.incluido(c);
+    }
+    public boolean disjunto(Conjunto c){
+        boolean noHay=true;
+        for(int i=0;i<cantElementos && noHay;i++){
+            if(c.pertenece(ce[i])){
+                noHay=false;
+            }
+        }
+        return noHay;
+    }
+    public Conjunto union(Conjunto c){
+        Conjunto nuevo=new Conjunto(cantElementos+c.cantElementos);
+        for(int i=0;i<cantElementos;i++){
+            nuevo.insertar(ce[i]);
+        }
+        for(int j=0;j<c.cantElementos;j++){
+            nuevo.insertar(c.obtener(j));
+        }
+        return nuevo;
+    }
+    public Conjunto interseccion(Conjunto c){
+        Conjunto nuevo=new Conjunto(cantElementos);
+        for(int i=0;i<cantElementos;i++){
+            if(c.pertenece(ce[i]))
+                nuevo.insertar(ce[i]);
+        }
+        return nuevo;
+    }
+    public Conjunto diferencia(Conjunto c){
+        Conjunto nuevo=new Conjunto(cantElementos+c.cantElementos);
+        for(int i=0;i<cantElementos;i++){
+            if(!c.pertenece(ce[i]))
+                nuevo.insertar(ce[i]);
+        }
+        return nuevo;
+    }
+    public int cardinalidad(){
+       return cantElementos;
     }
 }
