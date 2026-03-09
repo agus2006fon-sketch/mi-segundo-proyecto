@@ -6,12 +6,12 @@ public class TesterNominaEmpleado {
         Elemento e1=new Empleado(32,"Fabian",8,1000);
         Elemento e2=new Tecnico(35,"julian",8,1500);
         Elemento e3=new Empleado(312,"lucas",8,1000);
-        Elemento e4=new Tecnico(21,"fabri",8,1234);
+        Elemento e4=new Tecnico(21,"fabri",8,1500);
         Elemento e5=new Empleado(64,"fer",8,1000);
         Elemento e6=new Tecnico(54,"marcelo",8,1500);
         Elemento e7=new Empleado(27,"migue",8,1000);
         Elemento e8=new Empleado(48,"pepe",8,1000);
-        Elemento e9=new Tecnico(41,"luis",8,1463);
+        Elemento e9=new Tecnico(41,"luis",8,1500);
         Elemento e10=new Empleado(72,"nico",8,1000);
         Elemento e11=new Empleado(16,"lea",8,1000);
 
@@ -20,7 +20,6 @@ public class TesterNominaEmpleado {
         ne.insertar(e3);
         ne.insertar(e4);
         ne.insertar(e5);
-        ne.insertar(e5);
         ne.insertar(e6);
         ne.insertar(e7);
         ne.insertar(e8);
@@ -28,7 +27,12 @@ public class TesterNominaEmpleado {
         ne.insertar(e10);
         ne.insertar(e11);
 
-        System.out.print(ne.sumarSueldos());
+        for(int i=0;i<ne.cant;i++){
+            Empleado em=(Empleado)ne.recuperarElemento(i);
+            System.out.println("e"+(i+1)+" :"+em.obtenerSueldo());
+        }
+        System.out.println("metodo sumarSueldos");
+        System.out.print("resultado esperado:111,200=="+ne.sumarSueldos());
 
     }
 }

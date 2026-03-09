@@ -5,7 +5,7 @@ public class MatrizGenerica {
     protected Elemento[][] m;
     //constructor
     public MatrizGenerica(int nf,int nc){
-        if(nf>=0 && nf<m.length && nc>=0 && nc<m[0].length){
+        if(nf>0 && nc>0 ){
             m=new Elemento[nf][nc];
         }
     }
@@ -61,18 +61,17 @@ public class MatrizGenerica {
             for(int fil=0;fil<cantFilas() && es;fil++){
                 for(int col=0;col<cantColumnas() && es;col++){
                     if(m[fil][col]!=null && c.obtener(fil, col)!=null && 
-                       m[fil][col].complemento() != c.obtener(fil, col).complemento()){
+                       !m[fil][col].complemento().equals(c.obtener(fil, col).complemento())){
                         es=false;
                     }
                 }
             }
-        }else 
-            if(cantFilas()!=c.cantFilas() && cantColumnas()!=c.cantColumnas())
-              es=false;
+        }else
+            es=false;
         return es;
     }
     public MatrizGenerica clone(){
-        MatrizGenerica c=new MatrizGenerica(cantFilas(),cantFilas());
+        MatrizGenerica c=new MatrizGenerica(cantFilas(),cantColumnas());
         for(int fil=0;fil<cantFilas();fil++){
             for(int col=0;col<cantColumnas();col++){
                 if(m[fil][col]!=null){

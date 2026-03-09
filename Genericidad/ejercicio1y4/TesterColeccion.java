@@ -16,18 +16,19 @@ public class TesterColeccion {
         c.insertar(a3);
         c.insertar(a2);
         c.insertar(a4);
-        //metodo estaLlena
-        System.out.println("respuesta esperada, true:"+c.estaLlena());
+        System.out.println("metodo estaLlena");
+        System.out.println("respuesta esperada=true, recibida="+c.estaLlena());
+        System.out.println("eliminamos a a1");
         c.eliminar(a1);
-        System.out.println("respuesta esperada,false:"+c.estaLlena());
+        System.out.println("respuesta esperada=false, recibida="+c.estaLlena());
 
-        //metodo recuperar
-        System.out.println("rta esperada;null: "+c.recuperarElemento(6));
-        System.out.println(c.recuperarElemento(4));
-        //estaElemento
-        System.out.println("false:"+c.estaElemento(a1));
-        System.out.println("true:"+c.estaElemento(a2));
-        //metodo cantElementos
+        System.out.println("metodo recuperar elemento:");
+        System.out.println("rta esperada=null, rta recibida= "+c.recuperarElemento(6));
+        System.out.println("recuperamos elemento 4"+c.recuperarElemento(4));
+        System.out.println("metodo estaElemento:");
+        System.out.println("respuesta esperada=false;respuesta recibida="+c.estaElemento(a1));
+        System.out.println("respuesta esperada=true;respuesta recibida="+c.estaElemento(a2));
+        System.out.println("metodo cantElementos=5");
         System.out.println(c.cantElementos());
 
     }

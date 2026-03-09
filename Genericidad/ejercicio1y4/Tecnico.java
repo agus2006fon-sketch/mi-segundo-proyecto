@@ -5,6 +5,6 @@ public class Tecnico extends Empleado {
         super(leg, nombre, canth, valorh);
     }
     public float obtenerSueldo(){
-        return super.obtenerSueldo()+(15*100)/valorHora;
+        return super.obtenerSueldo()+ (0.15f * super.obtenerSueldo());
     }
 }
