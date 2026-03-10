@@ -12,8 +12,8 @@ public class Conjunto {
     }
     //comandos
     public void insertar(Elemento e){
-        if(ce[ce.length]==null){
-            ce[ce.length]=e;
+        if(cantElementos<ce.length && !pertenece(e)){
+            ce[cantElementos]=e;
             cantElementos++;
         }
     }
@@ -27,7 +27,7 @@ public class Conjunto {
     public boolean pertenece(Elemento e){
         boolean p=false;
         for(int i=0;i<ce.length && !p;i++){
-            if(ce[i]!=null && ce[i]==e)
+            if(ce[i]!=null && ce[i].esEquivalente(e))
                 p=true;
         }
         return p;
