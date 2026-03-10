@@ -25,7 +25,12 @@ public class Criatura extends Elemento {
         return energia;
     }
     public boolean equals(Elemento c){
-        return this==c;
+        boolean eq=false;
+        if(this.getClass()==c.getClass()){
+            Criatura cr=(Criatura)c;
+            eq=this.nombre==cr.obtenerNombre() && this.energia==cr.obtenerEnergia();
+        }
+        return eq;
     }
     public boolean complemento(Elemento c){
         boolean es=false;

@@ -11,7 +11,7 @@ public class Conjunto {
     }
     //comandos
     public void insertar(Elemento e){
-        if(e!=null){ 
+        if(e!=null && !pertenece(e)){ 
             co[cant]=e;
             cant++;
         }
